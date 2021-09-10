@@ -382,11 +382,7 @@ button:hover {
 
 
 
-.left-image img,
-.right-image img {
-    border-radius: 5px;
-    margin-top: 20px;
-}
+
 
 .left-image img,
 .right-image img {
@@ -1133,4 +1129,10 @@ section.contact-me {
     margin-top: 25px;
     padding: 15px 20px;
     text-transform: uppercase;
+  }
+
+  .mysection{
+text-align: left;
+margin-left: 60px;
+
   }

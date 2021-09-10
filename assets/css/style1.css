@@ -1,0 +1,295 @@
+/* COLORS
+========================================== */
+/* MIXINS
+========================================== */
+/* KEYFRAMES
+========================================== */
+@-webkit-keyframes float {
+  0% {
+    -webkit-transform: translatey(0px);
+            transform: translatey(0px);
+    -webkit-transform: translatex(0px);
+            transform: translatex(0px);
+  }
+  50% {
+    -webkit-transform: translatey(-30px);
+            transform: translatey(-30px);
+    -webkit-transform: translatex(20px);
+            transform: translatex(20px);
+  }
+  100% {
+    -webkit-transform: translatey(0px);
+            transform: translatey(0px);
+    -webkit-transform: translatex(0px);
+            transform: translatex(0px);
+  }
+}
+
+@keyframes float {
+  0% {
+    -webkit-transform: translatey(0px);
+            transform: translatey(0px);
+    -webkit-transform: translatex(0px);
+            transform: translatex(0px);
+  }
+  50% {
+    -webkit-transform: translatey(-30px);
+            transform: translatey(-30px);
+    -webkit-transform: translatex(20px);
+            transform: translatex(20px);
+  }
+  100% {
+    -webkit-transform: translatey(0px);
+            transform: translatey(0px);
+    -webkit-transform: translatex(0px);
+            transform: translatex(0px);
+  }
+}
+
+/* RESET
+========================================== */
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background: #3e4146;
+  font-family: 'Roboto Condensed', sans-serif,'Homemade Apple', cursive;
+  font-size: 20px;
+}
+
+/* BUTTON
+========================================== */
+.button1 {
+  position: relative;
+  top: 10%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.button1 .button1 {
+  position: absolute;
+  top: 50%;
+  left: 70%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  font-family: inherit;
+  background-color: #ffffff;
+  border: 0;
+  padding: 15px 25px;
+  color: #000000;
+  text-transform: uppercase;
+  font-size: 21px;
+  letter-spacing: 1px;
+  width: 200px;
+  overflow: hidden;
+  outline: 0;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  visibility: visible;
+  opacity: 1;
+  font-weight: bold;
+  -webkit-box-shadow: 0px 6px 30px rgba(0, 0, 0, 0.6);
+          box-shadow: 0px 6px 30px rgba(0, 0, 0, 0.6);
+}
+
+.button1 .button1:hover {
+  cursor: pointer;
+  background-color: #8e6ac1;
+  color: #ffffff;
+}
+
+.button1 .button1 span {
+  opacity: 1;
+}
+
+.button1.clicked .button1 {
+  visibility: hidden;
+  oacity: 0;
+}
+
+/* POP-UP
+========================================== */
+.pop-up {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) scale(0.9);
+  transform: translate(-50%, -50%) scale(0.9);
+  overflow-y: auto;
+  -webkit-box-shadow: 0px 6px 30px rgba(0, 0, 0, 0.4);
+          box-shadow: 0px 6px 30px rgba(0, 0, 0, 0.4);
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  z-index: 10;
+  background-color: #ffffff;
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+  .pop-up {
+    width: calc(100% - 40px);
+    height: auto;
+    max-width: 900px;
+  }
+}
+
+.pop-up .content {
+  width: 100%;
+  max-width: 900px;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+  min-height: 100vh;
+}
+
+@media (min-width: 768px) {
+  .pop-up .content {
+    min-height: inherit;
+  }
+}
+
+.pop-up .content .container {
+  padding: 100px 20px 140px;
+}
+
+@media (min-width: 568px) {
+  .pop-up .content .container {
+    padding: 50px 20px 80px;
+  }
+}
+
+@media (min-width: 768px) {
+  .pop-up .content .container {
+    padding: 70px 0px 90px;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+}
+
+.pop-up .content .dots .dot {
+  position: absolute;
+  border-radius: 100%;
+  z-index: 11;
+}
+
+.pop-up .content .dots .dot:nth-of-type(1) {
+  top: -80px;
+  right: -80px;
+  width: 160px;
+  height: 160px;
+  background-color: #a43f49;
+  -webkit-animation: float 6s ease-in-out infinite;
+  animation: float 6s ease-in-out infinite;
+}
+
+@media (min-width: 768px) {
+  .pop-up .content .dots .dot:nth-of-type(1) {
+    top: -190px;
+    right: -190px;
+    width: 380px;
+    height: 380px;
+  }
+}
+
+.pop-up .content .dots .dot:nth-of-type(2) {
+  bottom: -120px;
+  left: -120px;
+  width: 240px;
+  height: 240px;
+  background-color: #8e6ac1;
+  -webkit-animation: float 8s ease-in-out infinite;
+  animation: float 8s ease-in-out infinite;
+}
+
+.pop-up .content .dots .dot:nth-of-type(3) {
+  bottom: -50px;
+  right: -50px;
+  width: 100px;
+  height: 100px;
+  background-color: #f66867;
+  -webkit-animation: float 4s ease-in-out infinite;
+  animation: float 4s ease-in-out infinite;
+}
+
+.pop-up.open {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transform: translate(-50%, -50%) scale(1);
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.pop-up h2 {
+  text-align: center;
+}
+
+.pop-up .polaroids {
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  background: url(page-bg.jpg);
+  background-size: cover;
+}
+
+.pop-up .polaroids .close {
+  position: absolute;
+  top: 40px;
+  left: 20px;
+  font-size: 1.1rem;
+  letter-spacing: 0.05rem;
+  color: #ffffff;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.pop-up .polaroids .close:hover {
+  cursor: pointer;
+  color: #f66867;
+}
+
+.pop-up .polaroid {
+  display: inline-block;
+  margin: 10px;
+  position: relative;
+  width: auto;
+}
+
+.pop-up .polaroid img {
+  border: 12px solid #9e9999;
+  border-bottom: 70px solid #9e9999;
+  -webkit-box-shadow: 3px 3px 3px #888;
+          box-shadow: 3px 3px 3px #888;
+  height: auto;
+  max-width: 100%;
+  position: relative;
+  transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  top: 50px;
+}
+
+.pop-up .polaroid img:hover {
+  top: 0px;
+  opacity: 0.5;
+}
+
+.pop-up .polaroid p {
+  color: white;
+  opacity: 1;
+  font-family: 'Homemade Apple', cursive;
+  font-size: 20px;
+  position: relative;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+}
+/*# sourceMappingURL=style1.css.map */
